@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #e0ecff, #f9fafb 55%);
+  color: #111827;
+  line-height: 1.6;
+  margin: 0;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* ================= DARK THEME ================= */
+
+body.dark-theme {
+  background: radial-gradient(circle at top left, #0b1220, #020617 60%);
+  color: #e5e7eb;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  transition: box-shadow 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+body.dark-theme .navbar {
+  background: rgba(2, 6, 23, 0.75) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+  transform: translateY(-1px);
+}
+
+body.dark-theme .navbar.scrolled {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-brand span {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 14px !important;
+  border-radius: 999px;
+  color: #4b5563;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+body.dark-theme .nav-link {
+  color: #cbd5f5;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0d6efd, #6366f1);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover {
+  background: rgba(59, 130, 246, 0.08);
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+body.dark-theme .nav-link:hover {
+  color: #fff;
+  background: rgba(99, 102, 241, 0.18);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: #111827;
+  background: rgba(59, 130, 246, 0.12);
+}
+
+body.dark-theme .nav-link.active {
+  color: #fff;
+  background: rgba(99, 102, 241, 0.22);
+}
+
+/* ================= BUTTONS ================= */
+.dark-theme .container a span{
+  color: #2563eb;
+
+}
+.btn-gradient {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff !important;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(37, 99, 235, 0.45);
+}
+
+/* Theme Toggle Button */
+
+.theme-toggle-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.06);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(15, 23, 42, 0.12);
+  transform: translateY(-1px);
+}
+
+body.dark-theme .theme-toggle-btn {
+  background: rgba(148, 163, 184, 0.15);
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 22px 0;
+  font-size: 13px;
+}
+
+.site-footer a {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #e5e7eb;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-hero {
+  padding-bottom: 32px;
+}
+
+.contact-info-list > div {
+  margin-bottom: 4px;
+}
+
+.contact-card {
+  background: #ffffff;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-theme .contact-card {
+  background: #020617;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* ================= FLOATING INPUT ================= */
+
+.floating-input {
+  position: relative;
+}
+
+.floating-input .form-control {
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  padding: 12px 14px;
+  font-size: 14px;
+  background-color: #f9fafb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
+    transform 0.15s ease;
+}
+
+body.dark-theme .floating-input .form-control {
+  background: #020617;
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #e5e7eb;
+}
+
+.floating-input textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.floating-input label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #9ca3af;
+  pointer-events: none;
+  transition: all 0.18s ease;
+  background: transparent;
+}
+
+body.dark-theme .floating-input label {
+  color: #94a3b8;
+}
+
+.floating-input .form-control:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+  transform: translateY(-1px);
+}
+
+body.dark-theme .floating-input .form-control:focus {
+  background: #020617;
+}
+
+.floating-input .form-control:focus + label,
+.floating-input .form-control:not(:placeholder-shown) + label,
+.floating-input textarea:focus + label,
+.floating-input textarea:not(:placeholder-shown) + label {
+  top: 8px;
+  font-size: 11px;
+  color: #2563eb;
+  background: #ffffff;
+  padding: 0 4px;
+  border-radius: 999px;
+}
+
+body.dark-theme .floating-input .form-control:focus + label,
+body.dark-theme .floating-input .form-control:not(:placeholder-shown) + label {
+  background: #020617;
+}
+
+/* ================= MAP BOX ================= */
+
+.contact-map-box {
+  border-radius: 16px;
+  background: repeating-linear-gradient(
+    45deg,
+    #e5e7eb,
+    #e5e7eb 6px,
+    #f3f4f6 6px,
+    #f3f4f6 12px
+  );
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+}
+
+body.dark-theme .contact-map-box {
+  background: repeating-linear-gradient(
+    45deg,
+    #020617,
+    #020617 6px,
+    #0b1220 6px,
+    #0b1220 12px
+  );
+}
+
+/* ================= ANIMATIONS ================= */
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeInUp 0.75s ease-out forwards;
+}
+
+.fade-in-delay-1 { animation-delay: 0.15s; }
+.fade-in-delay-2 { animation-delay: 0.3s; }
+.fade-in-delay-3 { animation-delay: 0.45s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991.98px) {
+  .contact-hero .row { text-align: center; }
+
+  .contact-info-list {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .contact-card { margin-top: 4px; }
+}
+
+@media (max-width: 575.98px) {
+  .contact-map-box { min-height: 130px; }
+
+  .floating-input .form-control { font-size: 13px; }
+
+  .contact-hero { padding-top: 80px; }
+}
+
+
+iframe {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 1px 1px 20px rgb(0, 0, 0);
+  transition: all 1s ease;
+}
+body.dark-theme iframe {
+  box-shadow: 1px 1px 20px rgb(255, 255, 255);
+}

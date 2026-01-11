@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Club – Events</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style/events.css" />
+    <script src="scripts/events.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+      <!-- LOGO -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <div class="rounded-circle d-flex align-items-center justify-content-center"
+          style="width:34px;height:34px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;font-weight:600;font-size:18px;">
+          C
+        </div>
+        <span>Campus Club</span>
+      </a>
+
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- LINKS -->
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- JOIN BUTTON -->
+        <a href="contact.html" class="btn btn-gradient ms-lg-3 mt-2 mt-lg-0">
+          Join Next Event →
+        </a>
+
+        <!-- 🌙 THEME BUTTON (ICON) -->
+        <button id="themeBtn" class="btn btn-outline-secondary btn-soft ms-lg-3 mt-2 mt-lg-0">
+          🌙
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="section-padding events-hero">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+
+        <div class="col-lg-7 fade-in-up">
+          <p class="section-subtitle mb-1">Campus Activities</p>
+          <h1 class="section-title mb-3">
+            Explore All <span class="hero-highlight">Campus Events</span>
+          </h1>
+
+          <p class="text-secondary">
+            Search, filter and register for events happening across campus.
+          </p>
+
+          <!-- SEARCH -->
+          <input id="searchInput" type="text" class="form-control mt-3"
+            placeholder="Search events like Coding, Sports, Fest..." />
+
+          <!-- FILTER BUTTONS -->
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <button class="badge-soft filter-btn active" data-category="all">All</button>
+            <button class="badge-soft filter-btn" data-category="tech">Technical</button>
+            <button class="badge-soft filter-btn" data-category="cultural">Cultural</button>
+            <button class="badge-soft filter-btn" data-category="sports">Sports</button>
+          </div>
+
+          <!-- TOGGLE -->
+          <div class="form-check form-switch mt-3">
+            <input class="form-check-input" type="checkbox" id="togglePast">
+            <label class="form-check-label small">Show past events</label>
+          </div>
+        </div>
+
+        <!-- HIGHLIGHT CARD -->
+        <div class="col-lg-5 fade-in-up fade-in-delay-1">
+          <div class="custom-card p-4">
+            <div class="hero-mini-tag mb-1">Highlight</div>
+            <h5>Annual Campus Fest</h5>
+            <p class="small text-secondary mb-2">
+              Tech + Cultural + Food Fest (3 Days)
+            </p>
+            <p class="small"><strong>Date:</strong> 24–26 Feb</p>
+            <p class="small"><strong>Venue:</strong> Main Ground</p>
+
+            <button class="btn btn-gradient btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#registerModal">
+              Register Now
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EVENTS GRID ================= -->
+  <section id="event-grid" class="section-padding pt-0">
+    <div class="container">
+
+      <h2 class="section-title mb-3">Upcoming Events</h2>
+
+      <div class="row g-4" id="eventsContainer">
+
+        <!-- EVENT -->
+        <div class="col-md-6 col-lg-4 fade-in-up event-item" data-category="tech">
+          <div class="event-card">
+            <div class="event-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=60"
+                class="event-img" />
+              <span class="event-tag">Technical</span>
+            </div>
+            <div class="event-body">
+              <p class="event-date">22 Dec • Auditorium</p>
+              <h4 class="event-title">JavaScript Sprint</h4>
+              <p class="event-desc">Solve real-time coding challenges.</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <button class="btn btn-outline-success btn-soft btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#registerModal">Register</button>
+
+                <label class="small">
+                  ⭐ <input type="checkbox" class="save-event"> Save
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVENT -->
+        <div class="col-md-6 col-lg-4 fade-in-up fade-in-delay-1 event-item" data-category="cultural">
+          <div class="event-card">
+            <div class="event-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=60"
+                class="event-img" />
+              <span class="event-tag event-tag-yellow">Cultural</span>
+            </div>
+            <div class="event-body">
+              <p class="event-date">28 Dec • Main Ground</p>
+              <h4 class="event-title">Cultural Night</h4>
+              <p class="event-desc">Dance, music & open mic.</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <button class="btn btn-outline-warning btn-soft btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#registerModal">Join</button>
+
+                <label class="small">
+                  ⭐ <input type="checkbox" class="save-event"> Save
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVENT -->
+        <div class="col-md-6 col-lg-4 fade-in-up fade-in-delay-2 event-item" data-category="sports">
+          <div class="event-card">
+            <div class="event-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=60"
+                class="event-img" />
+              <span class="event-tag event-tag-orange">Sports</span>
+            </div>
+            <div class="event-body">
+              <p class="event-date">05 Jan • Ground</p>
+              <h4 class="event-title">Sports Meet</h4>
+              <p class="event-desc">Cricket, football & athletics.</p>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <button class="btn btn-outline-danger btn-soft btn-sm" data-bs-toggle="modal"
+                  data-bs-target="#registerModal">Details</button>
+
+                <label class="small">
+                  ⭐ <input type="checkbox" class="save-event"> Save
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LOAD MORE -->
+      <div class="text-center mt-4">
+        <button id="loadMoreBtn" class="btn btn-gradient btn-sm">
+          Load More Events ⬇️
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= REGISTER MODAL ================= -->
+  <div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <h5>Event Registration</h5>
+
+        <input class="form-control my-2" placeholder="Your Name" />
+        <input class="form-control my-2" placeholder="Email" />
+        <input class="form-control my-2" placeholder="Contact Number" />
+
+        <button class="btn btn-gradient w-100 mt-2">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container d-flex justify-content-between flex-wrap">
+      <p>© 2025 Campus Club. By <a href="https://github.com/AbhimanyuSurendran">Abhimanyu Surendran</a>.</p>
+      <p>
+        <a href="index.html">Home</a> ·
+        <a href="about.html">About</a> ·
+        <a href="events.html">Events</a> ·
+        <a href="gallery.html">Gallery</a> ·
+        <a href="contact.html">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- YOUR SCRIPT -->
+
+</body>
+
+</html>
